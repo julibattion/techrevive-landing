@@ -1,52 +1,79 @@
 'use client'
 
-import { useState } from 'react'
-import { Bars3Icon } from '@heroicons/react/24/outline'
+import React from "react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
 
-const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
-]
+export default function NavbarComponent() {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-
-const NavbarComponent = () => {
-    const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const menuItems = [
+        "Profile",
+        "Dashboard",
+        "Activity",
+        "Analytics",
+        "System",
+        "Deployments",
+        "My Settings",
+        "Team Settings",
+        "Help & Feedback",
+        "Log Out",
+    ];
 
     return (
-        <header>
-            <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
-                <div className="flex lg:flex-1">
-                    <a href="#" className="-m-1.5 p-1.5">
-                        <span className="sr-only">Your Company</span>
-                    </a>
-                </div>
-                <div className="flex lg:hidden">
-                    <button
-                        type="button"
-                        className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
-                        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    >
-                        <span className="sr-only">Open main menu</span>
-                        <Bars3Icon className="h-6 w-6" aria-hidden="true" />
-                    </button>
-                </div>
-                <div className="hidden lg:flex lg:gap-x-12">
-                    {navigation.map((item) => (
-                        <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-gray-900">
-                            {item.name}
-                        </a>
-                    ))}
-                </div>
-                <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                    <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-                        Log in <span aria-hidden="true">&rarr;</span>
-                    </a>
-                </div>
-            </nav>
-        </header>
-    );
-};
+        <Navbar onMenuOpenChange={setIsMenuOpen}>
+            <NavbarContent>
+                <NavbarMenuToggle
+                    aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+                    className="sm:hidden"
+                />
+                <NavbarBrand>
+                    <p className="font-bold text-inherit">ACME</p>
+                </NavbarBrand>
+            </NavbarContent>
 
-export default NavbarComponent;
+            <NavbarContent className="hidden sm:flex gap-4" justify="center">
+                <NavbarItem>
+                    <Link color="foreground" href="#">
+                        Features
+                    </Link>
+                </NavbarItem>
+                <NavbarItem isActive>
+                    <Link href="#" aria-current="page">
+                        Customers
+                    </Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link color="foreground" href="#">
+                        Integrations
+                    </Link>
+                </NavbarItem>
+            </NavbarContent>
+            <NavbarContent justify="end">
+                <NavbarItem className="hidden lg:flex">
+                    <Link href="#">Login</Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Button as={Link} color="primary" href="#" variant="flat">
+                        Sign Up
+                    </Button>
+                </NavbarItem>
+            </NavbarContent>
+            <NavbarMenu>
+                {menuItems.map((item, index) => (
+                    <NavbarMenuItem key={`${item}-${index}`}>
+                        <Link
+                            color={
+                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
+                            }
+                            className="w-full"
+                            href="#"
+                            size="lg"
+                        >
+                            {item}
+                        </Link>
+                    </NavbarMenuItem>
+                ))}
+            </NavbarMenu>
+        </Navbar>
+    );
+}
