@@ -7,7 +7,6 @@ export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        "Profile",
         "Dashboard",
         "Activity",
         "Analytics",
@@ -27,35 +26,30 @@ export default function NavbarComponent() {
                     className="sm:hidden"
                 />
                 <NavbarBrand>
-                    <p className="font-bold text-inherit">ACME</p>
+                    <p className="font-bold text-inherit">TECHREVIVE</p>
                 </NavbarBrand>
             </NavbarContent>
 
-            <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                <NavbarItem>
-                    <Link color="foreground" href="#">
-                        Features
-                    </Link>
-                </NavbarItem>
+            <NavbarContent className="hidden sm:flex gap-8" justify="center">
                 <NavbarItem isActive>
                     <Link href="#" aria-current="page">
-                        Customers
+                        Nosotros
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
                     <Link color="foreground" href="#">
-                        Integrations
+                        Servicios
                     </Link>
                 </NavbarItem>
-            </NavbarContent>
-            <NavbarContent justify="end">
-                <NavbarItem className="hidden lg:flex">
-                    <Link href="#">Login</Link>
+                <NavbarItem>
+                    <Link color="foreground" href="#">
+                        Clientes
+                    </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Button as={Link} color="primary" href="#" variant="flat">
-                        Sign Up
-                    </Button>
+                    <Link color="foreground" href="#">
+                        Contacto
+                    </Link>
                 </NavbarItem>
             </NavbarContent>
             <NavbarMenu>
