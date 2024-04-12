@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Montserrat } from "next/font/google";
+import { Montserrat, Raleway } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./provider";
 
-const montserrat = Montserrat({ subsets: ["latin"] });
+const montserrat = Raleway({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Techrevive",

@@ -7,15 +7,11 @@ export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        "Dashboard",
-        "Activity",
-        "Analytics",
-        "System",
-        "Deployments",
-        "My Settings",
-        "Team Settings",
-        "Help & Feedback",
-        "Log Out",
+        "Incio",
+        "Servicios",
+        "Nosotros",
+        "Clientes",
+        "Contactos"
     ];
 
     return (
@@ -32,23 +28,28 @@ export default function NavbarComponent() {
 
             <NavbarContent className="hidden sm:flex gap-8" justify="center">
                 <NavbarItem isActive>
-                    <Link href="#" aria-current="page">
+                    <Link href="inicio" aria-current="page">
+                        Inicio
+                    </Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link href="nosotros">
                         Nosotros
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color="foreground" href="#">
+                    <Link href="servicios">
                         Servicios
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color="foreground" href="#">
+                    <Link href="clientes">
                         Clientes
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link color="foreground" href="#">
-                        Contacto
+                    <Link href="contactos">
+                        Contactos
                     </Link>
                 </NavbarItem>
             </NavbarContent>

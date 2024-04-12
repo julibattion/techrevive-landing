@@ -60,11 +60,9 @@ const FormComponent = () => {
                 </div>
 
                 <div>
-                    <div className="flex items-center justify-between">
-                        <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
-                            Nombre
-                        </label>
-                    </div>
+                    <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                        Nombre
+                    </label>
                     <div className="mt-2">
                         <input
                             id="name"
