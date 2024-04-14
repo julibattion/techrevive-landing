@@ -41,6 +41,7 @@ const FormComponent = () => {
 
     return (
         <div className='m-auto my-10 px-4 max-w-[600px]'>
+
             <form className="space-y-6" onSubmit={handleSubmit}>
                 <div className="input-group">
                     <div className="input-row">
@@ -88,7 +89,7 @@ const FormComponent = () => {
                     <div>
                         <button
                             type="submit"
-                            className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mt-2"
+                            className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mt-2"
                         >
                             Enviar
                         </button>

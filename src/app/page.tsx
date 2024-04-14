@@ -337,7 +337,7 @@ export default function Example() {
 
       </section>
 
-      <footer className="footer">
+      <footer className="footer bg-secondary">
         <div className="tech-footer">
           <Image src="techrevive.png" alt="logo empresa" className="techrevive" />
         </div>

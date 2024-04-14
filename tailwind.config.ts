@@ -15,22 +15,24 @@ module.exports = {
   darkMode: "class",
   plugins: [
     nextui({
-      prefix: "nextui", // prefix for themes variables
-      addCommonColors: false, // override common colors (e.g. "blue", "green", "pink").
-      defaultTheme: "light", // default theme from the themes object
-      defaultExtendTheme: "light", // default theme to extend on custom themes
-      layout: {}, // common layout tokens (applied to all themes)
+      addCommonColors: true,
       themes: {
         light: {
-          layout: {}, // light theme layout tokens
-          colors: {}, // light theme colors
+          colors: {
+            background: "#FFFFFF",
+            foreground: "#3b3b3b",
+            primary: {
+              foreground: "white",
+              DEFAULT: "#0038ff",
+            },
+            secondary: {
+              foreground: "white",
+              DEFAULT: "#121F7B",
+            }
+          }
         },
-        dark: {
-          layout: {}, // dark theme layout tokens
-          colors: {},
-        },
-        // ... custom themes
-      },
-    }),
-  ],
+        dark: {}
+      }
+    })
+  ]
 }

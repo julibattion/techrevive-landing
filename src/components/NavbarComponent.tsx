@@ -1,7 +1,7 @@
 'use client'
 
 import React from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Button } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Link, Image } from "@nextui-org/react";
 
 export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
@@ -15,52 +15,49 @@ export default function NavbarComponent() {
     ];
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen}>
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-secondary">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                    className="sm:hidden"
+                    className="sm:hidden text-white"
                 />
                 <NavbarBrand>
-                    <p className="font-bold text-inherit">TECHREVIVE</p>
+                    <Image src="logo.png" alt="logo" width={40} height={40} radius="none" />
                 </NavbarBrand>
             </NavbarContent>
 
             <NavbarContent className="hidden sm:flex gap-8" justify="center">
-                <NavbarItem isActive>
-                    <Link href="inicio" aria-current="page">
+                <NavbarItem>
+                    <Link href="inicio" aria-current="page" className="text-white">
                         Inicio
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="nosotros">
+                    <Link href="nosotros" className="text-white">
                         Nosotros
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="servicios">
+                    <Link href="servicios" className="text-white">
                         Servicios
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="clientes">
+                    <Link href="clientes" className="text-white">
                         Clientes
                     </Link>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="contactos">
+                    <Link href="contactos" className="text-white">
                         Contactos
                     </Link>
                 </NavbarItem>
             </NavbarContent>
-            <NavbarMenu>
+            <NavbarMenu className="bg-secondary">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
-                            color={
-                                index === 2 ? "primary" : index === menuItems.length - 1 ? "danger" : "foreground"
-                            }
-                            className="w-full"
+                            className="w-full text-white"
                             href="#"
                             size="lg"
                         >
