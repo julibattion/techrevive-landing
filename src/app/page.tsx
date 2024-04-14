@@ -301,27 +301,7 @@ export default function Example() {
                 <h2>Contacto</h2>
                 <p>Contactate con nosotros, dejá tu consulta y/o comentario y te responderemos a la brevedad.</p>
               </div>
-              {/* <form action="php/form.php" method="post">
-                <div className="input-group">
-                  <div className="input-row">
-                    <div className="name">
-                      <input type="text" name="name" id="name" className="form-control" placeholder="Nombre" />
-                    </div>
-                    <div className="email">
-                      <input type="text" name="mail" className="form-control" id="mail" placeholder="Email" />
-                    </div>
-                  </div>
-                  <div className="subject">
-                    <input type="text" name="subject" className="form-control" id="subject" placeholder="Asunto" />
-                  </div>
-                  <div className="message">
-                    <textarea name="message" className="form-control" id="message" placeholder="Mensaje"></textarea>
-                  </div>
-                  <div className="button">
-                    <button type="submit" className="btn">Enviar</button>
-                  </div>
-                </div>
-              </form> */}
+
               <FormComponent />
             </div>
           </div>
