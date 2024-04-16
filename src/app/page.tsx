@@ -171,7 +171,7 @@ export default function Home() {
 
       <footer className="footer bg-secondary">
         <div className="tech-footer">
-          <Image src="techrevive.png" alt="logo empresa" className="techrevive" />
+          <Image src="techrevive.png" alt="logo empresa" className="techrevive" radius='none' />
         </div>
         <hr />
         <div className="info">
