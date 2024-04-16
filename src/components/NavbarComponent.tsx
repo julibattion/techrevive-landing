@@ -14,8 +14,16 @@ export default function NavbarComponent() {
         "Contactos"
     ];
 
+    const scrollToSection = (id: string) => {
+        const section = document.getElementById(id);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
+
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-secondary opacity-95 mt-[-4rem]">
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-secondary opacity-90 mt-[-4rem]">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -28,29 +36,29 @@ export default function NavbarComponent() {
 
             <NavbarContent className="hidden sm:flex gap-8" justify="center">
                 <NavbarItem>
-                    <Link href="inicio" aria-current="page" className="text-white">
+                    <p className="text-white cursor-pointer" onClick={() => scrollToSection('inicio')}>
                         Inicio
-                    </Link>
+                    </p>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="nosotros" className="text-white">
+                    <p className="text-white cursor-pointer" onClick={() => scrollToSection('nosotros')}>
                         Nosotros
-                    </Link>
+                    </p>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="servicios" className="text-white">
+                    <p className="text-white cursor-pointer" onClick={() => scrollToSection('servicios')}>
                         Servicios
-                    </Link>
+                    </p>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="clientes" className="text-white">
+                    <p className="text-white cursor-pointer" onClick={() => scrollToSection('clientes')}>
                         Clientes
-                    </Link>
+                    </p>
                 </NavbarItem>
                 <NavbarItem>
-                    <Link href="contactos" className="text-white">
+                    <p className="text-white cursor-pointer" onClick={() => scrollToSection('contacto')}>
                         Contactos
-                    </Link>
+                    </p>
                 </NavbarItem>
             </NavbarContent>
             <NavbarMenu className="bg-secondary">

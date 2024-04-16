@@ -4,7 +4,6 @@ import CarouselComponent from '@/components/CarouselComponent';
 import FormComponent from '@/components/FormComponent';
 import NavbarComponent from '@/components/NavbarComponent';
 import { Image } from '@nextui-org/react'
-import { useEffect, useRef, useState } from 'react';
 
 
 export default function Home() {
