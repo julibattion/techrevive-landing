@@ -15,7 +15,7 @@ export default function NavbarComponent() {
     ];
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-secondary">
+        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-secondary opacity-95 mt-[-4rem]">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
