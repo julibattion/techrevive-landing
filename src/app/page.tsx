@@ -1,154 +1,13 @@
 'use client'
 
+import CarouselComponent from '@/components/CarouselComponent';
 import FormComponent from '@/components/FormComponent';
 import NavbarComponent from '@/components/NavbarComponent';
 import { Image } from '@nextui-org/react'
 import { useEffect, useRef, useState } from 'react';
 
 
-export default function Example() {
-  const navRef = useRef<HTMLDivElement>(null);
-  const abrirRef = useRef<HTMLButtonElement>(null);
-  const cerrarRef = useRef<HTMLButtonElement>(null);
-  const enlacesSeccionRef = useRef<NodeListOf<HTMLAnchorElement> | null>(null);
-
-  const wrapperRef = useRef<HTMLDivElement>(null);
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const arrowBtnsRef = useRef<NodeListOf<HTMLElement> | null>(null);
-
-  const [isDragging, setIsDragging] = useState(false);
-  const [isAutoPlay, setIsAutoPlay] = useState(true);
-  const [startX, setStartX] = useState(0);
-  const [startScrollLeft, setStartScrollLeft] = useState(0);
-  const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
-  const [cardPerView, setCardPerView] = useState(0);
-
-  useEffect(() => {
-    const nav = navRef.current;
-    const abrir = abrirRef.current;
-    const cerrar = cerrarRef.current;
-    const enlacesSeccion = enlacesSeccionRef.current;
-
-    const wrapper = wrapperRef.current;
-    const carousel = carouselRef.current;
-    const arrowBtns = arrowBtnsRef.current;
-
-    if (
-      nav &&
-      abrir &&
-      cerrar &&
-      enlacesSeccion &&
-      wrapper &&
-      carousel &&
-      arrowBtns
-    ) {
-      const firstCardWidth =
-        carousel.querySelector<HTMLDivElement>(".card")!.offsetWidth;
-      const carouselChildrens = Array.from(carousel.children);
-      const cardPerView = Math.round(carousel.offsetWidth / firstCardWidth);
-
-      setCardPerView(cardPerView);
-
-      abrir.addEventListener("click", () => {
-        nav.classList.add("visible");
-        abrir.style.visibility = "hidden";
-        cerrar.style.visibility = "visible";
-      });
-
-      cerrar.addEventListener("click", () => {
-        nav.classList.remove("visible");
-        abrir.style.visibility = "visible";
-        cerrar.style.visibility = "hidden";
-      });
-
-      enlacesSeccion.forEach((enlace: any) => {
-        enlace.addEventListener("click", () => {
-          nav.classList.remove("visible");
-          abrir.style.visibility = "visible";
-          cerrar.style.visibility = "hidden";
-        });
-      });
-
-      carouselChildrens
-        .slice(-cardPerView)
-        .reverse()
-        .forEach((card) => {
-          carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-        });
-
-      carouselChildrens.slice(0, cardPerView).forEach((card) => {
-        carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-      });
-
-      carousel.classList.add("no-transition");
-      carousel.scrollLeft = carousel.offsetWidth;
-      carousel.classList.remove("no-transition");
-
-      arrowBtns.forEach((btn: any) => {
-        btn.addEventListener("click", () => {
-          carousel.scrollLeft +=
-            btn.id === "left" ? -firstCardWidth : firstCardWidth;
-        });
-      });
-
-      const dragStart = (e: MouseEvent) => {
-        setIsDragging(true);
-        carousel.classList.add("dragging");
-        setStartX(e.pageX);
-        setStartScrollLeft(carousel.scrollLeft);
-      };
-
-      const dragging = (e: MouseEvent) => {
-        if (!isDragging) return;
-        carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-      };
-
-      const dragStop = () => {
-        setIsDragging(false);
-        carousel.classList.remove("dragging");
-      };
-
-      const infiniteScroll = () => {
-        if (carousel.scrollLeft === 0) {
-          carousel.classList.add("no-transition");
-          carousel.scrollLeft =
-            carousel.scrollWidth - 2 * carousel.offsetWidth;
-          carousel.classList.remove("no-transition");
-        } else if (
-          Math.ceil(carousel.scrollLeft) ===
-          carousel.scrollWidth - carousel.offsetWidth
-        ) {
-          carousel.classList.add("no-transition");
-          carousel.scrollLeft = carousel.offsetWidth;
-          carousel.classList.remove("no-transition");
-        }
-
-        clearTimeout(timeoutId!);
-        if (!wrapper.matches(":hover")) autoPlay();
-      };
-
-      const autoPlay = () => {
-        if (!isAutoPlay) return;
-        setTimeoutId(
-          setTimeout(() => (carousel.scrollLeft += firstCardWidth), 2500)
-        );
-      };
-
-      autoPlay();
-
-      carousel.addEventListener("mousedown", dragStart);
-      carousel.addEventListener("mousemove", dragging);
-      document.addEventListener("mouseup", dragStop);
-      carousel.addEventListener("scroll", infiniteScroll);
-      wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId!));
-      wrapper.addEventListener("mouseleave", autoPlay);
-    }
-
-    return () => {
-      clearTimeout(timeoutId!);
-    };
-  }, []);
-
+export default function Home() {
   return (
     <div>
       <NavbarComponent />
@@ -247,37 +106,10 @@ export default function Example() {
         <div className="titulo">
           <h2>Especialistas en las siguientes <span>marcas</span></h2>
         </div>
-
-        <div className="wrapper">
-
-          <ul className="carousel">
-            <li className="card">
-              <div className="img"><Image src="acer.png" alt="logo acer" className="acer" draggable="false" /></div>
-            </li>
-
-            <li className="card">
-              <div className="img"><Image src="hp.png" alt="logo asus" className="hp" draggable="false" /></div>
-            </li>
-
-            <li className="card">
-              <div className="img"><Image src="bangho.png" alt="logo hp" className="bangho" draggable="false" /></div>
-            </li>
-
-            <li className="card">
-              <div className="img"><Image src="dell.png" alt="logo bangho" className="dell" draggable="false" /></div>
-            </li>
-
-            <li className="card">
-              <div className="img"><Image src="asus.png" alt="logo dell" className="asus" draggable="false" /></div>
-            </li>
-
-            <li className="card">
-              <div className="img"><Image src="lenovo.png" alt="logo lenovo" className="lenovo" draggable="false" /></div>
-            </li>
-          </ul>
-        </div>
-
       </section>
+
+      <CarouselComponent />
+
 
       <section className="contacto" id="contacto">
         <div className="container">
