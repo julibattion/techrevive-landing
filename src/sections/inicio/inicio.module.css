@@ -12,12 +12,6 @@
     background-position: center;
 }
 
-@media screen and (max-width: 840px){
-    .index{
-        margin-bottom: -160px;
-    }
-}
-
 @media screen and (max-width: 720px){
     .index{
         background-image: url(../../../public/portada-2.jpg);

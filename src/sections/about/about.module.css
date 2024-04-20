@@ -1,7 +1,6 @@
 .nosotros{
     display: flex;
     justify-content: space-around;
-    margin-top: 200px;
     background-color: #edf0f365;
     padding: 70px;
 }

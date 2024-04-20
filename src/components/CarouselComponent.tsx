@@ -7,14 +7,17 @@ import { Card, Image } from '@nextui-org/react'
 export default function SimpleSlider() {
     const settings = {
         dots: false,
-        slidesToShow: 5,
+        slidesToShow: 1,
         autoplay: true,
         autoplaySpeed: 1500,
         pauseOnHover: false,
         cssEase: "linear",
         infinite: true,
         arrows: false,
-        centerMode: false,
+        centerMode: true,
+        className: "slider variable-width",
+        slidesToScroll: 1,
+        variableWidth: true,
         responsive: [
             {
                 breakpoint: 576,
@@ -35,7 +38,7 @@ export default function SimpleSlider() {
 
     return (
         <Slider {...settings}>
-            <div>
+            <div className="flex justify-center items-center">
                 <div className="h-[250px] w-[250px] flex justify-center items-center">
                     <Image width={200} height={200} src="acer.png" alt="logo acer" />
                 </div>
