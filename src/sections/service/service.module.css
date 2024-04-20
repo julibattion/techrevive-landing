@@ -1,0 +1,249 @@
+.servicios{
+    overflow-x: hidden;
+}
+
+.nuestrosServicios{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 160px;
+}
+
+.nuestrosServicios h1{
+    font-size: 26px;
+}
+
+.nuestrosServicios h1 span{
+    color: #0038ff;
+}
+
+.arreglos1{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-evenly;
+    margin-bottom: 180px;
+}
+
+.arreglos1 img{
+    width: 440px;
+    height: 520px;
+    border-radius: 25px;
+}
+
+.arreglos1 div{
+    align-self: center;
+}
+
+.arreglos1 div p{
+    font-size: 18px;
+    width: 400px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.arreglos1 .diagnosticos{
+    text-align: center;
+    margin-top: 20px;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.arreglos1 .diagnosticos:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    
+}
+
+.arreglos1 .diagnosticos img{
+    width: 200px;
+    height: 60px;
+}
+
+.arreglos2{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-evenly;
+    margin-bottom: 180px;
+}
+
+.arreglos2 div{
+    align-self: center;
+}
+
+.arreglos2 img{
+    width: 440px;
+    height: 520px;
+    border-radius: 25px;
+}
+
+.arreglos2 div p{
+    font-size: 18px;
+    width: 400px;
+    text-align: left;
+    font-weight: 500;
+}
+
+.arreglos2 .diagnosticos{
+    text-align: center;
+    margin-top: 20px;
+    transition: 1s;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.arreglos2 .diagnosticos:hover{
+    transform: scale(1.1);
+    transition: 1s;
+    
+}
+
+.arreglos2 .diagnosticos img{
+    width: 200px;
+    height: 60px;
+}
+
+@media screen and (max-width: 1200px) { 
+    .arreglos1 div p{
+        font-size: 16px;
+    }
+    .arreglos1 .diagnosticos img{
+        width: 170px;
+        height: 50px;
+    }
+    .arreglos2 div p{
+        font-size: 16px;
+    }
+    .arreglos2 .diagnosticos img{
+        width: 170px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 990px){
+    .arreglos1  img{
+        width: 400px;
+        height: 480px;
+    }
+    .arreglos1 div p{
+        font-size: 14px;
+        width: 300px;
+    }
+    .arreglos2  img{
+        width: 400px;
+        height: 480px;
+    }
+    .arreglos2 div p{
+        font-size: 14px;
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 840px){
+    .servicios{
+        margin-top: -35px;
+    }
+    .arreglos1{
+        flex-direction: column;
+        align-items: center;
+    }
+    .arreglos2{
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .arreglos1 div{
+        margin-top: 60px;
+        margin-bottom: -35px;
+    }
+    .arreglos2 div{
+        margin-top: 60px;
+        margin-bottom: -35px;
+    }
+    .arreglos1 div p{
+        width: 400px;
+    }
+    .arreglos2 div p{
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 480px){
+    .servicios{
+        margin-top: -60px;
+    }
+    .servicios .nuestrosServicios h1{
+        margin-bottom: -20px;
+    }
+    .nuestrosServicios h1{
+        font-size: 21px;
+    }
+    .arreglos1  img{
+        width: 320px;
+        height: 400px;
+    }
+    .arreglos2  img{
+        width: 320px;
+        height: 400px;
+    }
+
+    .arreglos1 div p{
+        width: 320px;
+        font-size: 14px;
+    }
+
+    .arreglos2 div p{
+        width: 320px;
+        font-size: 14px;
+    }
+
+    .arreglos1 .diagnosticos img{
+        width: 140px;
+        height: 40px;
+    }
+
+    .arreglos2 .diagnosticos img{
+        width: 140px;
+        height: 40px;
+    }
+}
+
+@media screen and (max-width: 420px){
+    .arreglos1  img{
+        width: 300px;
+        height: 380px;
+    }
+    .arreglos2  img{
+        width: 300px;
+        height: 380px;
+    }
+
+    .arreglos1 div p{
+        width: 300px;
+    }
+
+    .arreglos2 div p{
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .arreglos1  img{
+        width: 200px;
+        height: 280px;
+    }
+    .arreglos2  img{
+        width: 200px;
+        height: 280px;
+    }
+    .arreglos1 div p{
+        font-size: 13px;
+        width: 270px;
+    }
+
+    .arreglos2 div p{
+        font-size: 13px;
+        width: 270px;
+    }
+}

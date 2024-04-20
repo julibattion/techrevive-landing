@@ -1,0 +1,31 @@
+.index{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-image: url(../../../public/portada-1.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@media screen and (max-width: 840px){
+    .index{
+        margin-bottom: -160px;
+    }
+}
+
+@media screen and (max-width: 720px){
+    .index{
+        background-image: url(../../../public/portada-2.jpg);
+    }
+}
+
+@media screen and (max-width: 490px){
+    .index{
+        background-image: url(../../../public/portada-3.jpg);
+    }
+}
