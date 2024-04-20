@@ -7,7 +7,7 @@ import { Card, Image } from '@nextui-org/react'
 export default function SimpleSlider() {
     const settings = {
         dots: false,
-        slidesToShow: 4,
+        slidesToShow: 5,
         autoplay: true,
         autoplaySpeed: 1500,
         pauseOnHover: false,
