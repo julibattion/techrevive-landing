@@ -4,9 +4,10 @@ import CarouselComponent from '@/components/CarouselComponent';
 import FormComponent from '@/components/FormComponent';
 import NavbarComponent from '@/components/NavbarComponent';
 import AboutComponent from '@/sections/about/AboutComponent';
+import DataComponent from '@/sections/data/DataComponent';
 import InicioComponent from '@/sections/inicio/InicioComponent';
 import ServiceComponent from '@/sections/service/ServiceComponent';
-import { Image } from '@nextui-org/react'
+import { Card, CardBody, CardHeader, Divider, Image } from '@nextui-org/react'
 
 
 export default function Home() {
@@ -20,7 +21,6 @@ export default function Home() {
 
       <ServiceComponent />
 
-
       <section className="marcas">
 
         <div className="titulo">
@@ -29,7 +29,6 @@ export default function Home() {
       </section>
 
       <CarouselComponent />
-
 
       <section className="contacto" id="contacto">
         <div className="container">
@@ -60,34 +59,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="datos">
-        <ul className="info">
-          <li className="card">
-            <div className="imagenes"><Image src="horarios.png" alt="icono horarios" /></div>
-            <div className="contenido">
-              <h3>Horarios de atención al público</h3>
-              <p>Lunes a viernes de <b>9 a 18hs.</b> <br /> Sábados de <b>9:30 a 13hs.</b></p>
-            </div>
-          </li>
-
-          <li className="card">
-            <div className="imagenes"><a href="https://api.whatsapp.com/send/?phone=3415024695" target="_blank"><Image src="wpp.png" alt="icono whatsapp" /></a></div>
-            <div className="contenido">
-              <h3>Whatsapp</h3>
-              <p>3415024695</p>
-            </div>
-          </li>
-
-          <li className="card">
-            <div className="imagenes"><Image src="mail.png" alt="icono mail" /></div>
-            <div className="contenido">
-              <h3>Escribinos</h3>
-              <p>techrevive.informatica@gmail.com</p>
-            </div>
-          </li>
-        </ul>
-
-      </section>
+      <DataComponent />
 
       <footer className="footer bg-secondary">
         <div className="tech-footer">

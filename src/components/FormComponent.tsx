@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Card, CardBody, CardHeader, Divider, Image } from '@nextui-org/react';
 
 interface FormModel {
     name: string;
@@ -41,63 +42,64 @@ const FormComponent = () => {
 
     return (
         <div className='m-auto my-10 px-4 max-w-[600px]'>
-
-            <form className="space-y-6" onSubmit={handleSubmit}>
-                <div className="input-group">
-                    <div className="input-row">
-                        <div className="name">
+            <div>
+                <form className="space-y-6" onSubmit={handleSubmit}>
+                    <div className="input-group">
+                        <div className="input-row">
+                            <div className="name">
+                                <input
+                                    value={formData.name}
+                                    onChange={handleChange}
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    placeholder="Nombre"
+                                />
+                            </div>
+                            <div className="email">
+                                <input
+                                    value={formData.email}
+                                    onChange={handleChange}
+                                    type="text"
+                                    name="email"
+                                    className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    id="email"
+                                    placeholder="Email" />
+                            </div>
+                        </div>
+                        <div className="subject">
                             <input
-                                value={formData.name}
+                                value={formData.subject}
                                 onChange={handleChange}
                                 type="text"
-                                name="name"
-                                id="name"
+                                name="subject"
                                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                placeholder="Nombre"
+                                id="subject"
+                                placeholder="Asunto"
                             />
                         </div>
-                        <div className="email">
-                            <input
-                                value={formData.email}
+                        <div className="message">
+                            <textarea
+                                value={formData.message}
                                 onChange={handleChange}
-                                type="text"
-                                name="email"
+                                name="message"
                                 className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                id="email"
-                                placeholder="Email" />
+                                id="message"
+                                placeholder="Mensaje">
+                            </textarea>
+                        </div>
+                        <div>
+                            <button
+                                type="submit"
+                                className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mt-2"
+                            >
+                                Enviar
+                            </button>
                         </div>
                     </div>
-                    <div className="subject">
-                        <input
-                            value={formData.subject}
-                            onChange={handleChange}
-                            type="text"
-                            name="subject"
-                            className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            id="subject"
-                            placeholder="Asunto"
-                        />
-                    </div>
-                    <div className="message">
-                        <textarea
-                            value={formData.message}
-                            onChange={handleChange}
-                            name="message"
-                            className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                            id="message"
-                            placeholder="Mensaje">
-                        </textarea>
-                    </div>
-                    <div>
-                        <button
-                            type="submit"
-                            className="flex w-full justify-center rounded-md bg-primary px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-primary-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 mt-2"
-                        >
-                            Enviar
-                        </button>
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     );
 };

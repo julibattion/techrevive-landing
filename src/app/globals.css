@@ -341,7 +341,6 @@ header nav .cerrar {
 /* CONTACTO */
 
 .contacto{
-    margin-bottom: 200px;
     background-color: #edf0f365;
     padding: 70px;
 }
@@ -357,7 +356,6 @@ header nav .cerrar {
 
 .iframe-container iframe {
     border: 0;
-    width: 550px;
 }
 
 .form-container {
