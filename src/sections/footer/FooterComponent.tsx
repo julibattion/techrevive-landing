@@ -12,7 +12,7 @@ export default function FooterComponent() {
                 <div className={styles.info}>
                     <p>Paraguay 2215
                     </p>
-                    <p>Cel. 3415024695</p>
+                    <p>Tel. 3415024695</p>
                     <p>techrevive.informatica@gmail.com</p>
                 </div>
                 <div className={styles.info}>
