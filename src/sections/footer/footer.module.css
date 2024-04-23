@@ -4,9 +4,12 @@
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
+}
+
+.footer .container {
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .footer hr{
@@ -28,16 +31,19 @@
 
 .footer .info .redes{
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.footer .info .redes a img{
-    height: 24px;
-    width: 24px;
-    margin-right: 2px;
+.footer .copyright p {
+    color: white;
+    text-align: center;
+    margin-top: 40px;
 }
 
 @media screen and (max-width: 600px){
-    .footer {
+    .container {
         flex-wrap: wrap;
         justify-content: center;
     }
