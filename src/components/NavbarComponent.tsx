@@ -10,7 +10,6 @@ export default function NavbarComponent() {
         "Incio",
         "Servicios",
         "Nosotros",
-        "Clientes",
         "Contactos"
     ];
 
@@ -48,11 +47,6 @@ export default function NavbarComponent() {
                 <NavbarItem>
                     <p className="text-white cursor-pointer" onClick={() => scrollToSection('servicios')}>
                         Servicios
-                    </p>
-                </NavbarItem>
-                <NavbarItem>
-                    <p className="text-white cursor-pointer" onClick={() => scrollToSection('clientes')}>
-                        Clientes
                     </p>
                 </NavbarItem>
                 <NavbarItem>
