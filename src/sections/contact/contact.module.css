@@ -3,16 +3,15 @@
 
 .contacto{
     background-color: #edf0f365;
-    padding: 70px;
+    padding: 140px;
 }
 
-.container {
+.contacto .container {
     display: flex;
-}
-
-.iframeContainer,
-.formContainer {
-    flex-grow: 1;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
 }
 
 .iframeContainer iframe {
@@ -21,9 +20,8 @@
 
 .formContainer {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
-    padding: 0 20px;
 }
 
 .formContainer .inputs .inputGroup .message textarea{
@@ -41,6 +39,8 @@
     font-size: 24px;
     font-weight: bold;
     color: #0038ff;
+    margin-bottom: 10px;
+    height: 100%;
 }
 
 .contactanos p {
@@ -93,22 +93,18 @@
 
 /* CONTACTO */
 
-@media screen and (max-width:1200px){
-    .iframeContainer iframe {
-        width: 500px;
-        margin-right: 40px;
-    }
-}
-
 @media screen and (max-width:992px){
-    .container{
+    .contacto{
+        padding: 40px;
+    }
+
+    .contacto .container{
         flex-direction: column;
         align-items: center;
     }
 
     .iframeContainer{
         margin-bottom: 50px;
-        margin-right: -40px;
     }
 }
 
@@ -132,15 +128,7 @@
 
 @media screen and (max-width: 400px){
     .iframeContainer iframe {
-        width: 270px;
+        width: auto;
     }
-    .contactanos p {
-        width: 200px;
-    }
-}
 
-@media screen and (max-width: 350px){
-    .iframeContainer iframe {
-        width: 230px;
-    }
 }

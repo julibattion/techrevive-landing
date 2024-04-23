@@ -1,0 +1,22 @@
+.data{
+    padding: 80px 140px;
+}
+
+.data .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+@media screen and (max-width: 600px){
+    .data {
+        padding: 40px;
+    }
+
+    .data .container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}

@@ -44,8 +44,8 @@ export default function ServiceComponent() {
   }, [controls, controls1, controls2, controls3, controls4, controls5, inView, inView1, inView2, inView3, inView4, inView5]);
 
   return (
-    <div>
-      <section className={styles.servicios} id="servicios">
+    <section className={styles.servicios} id="servicios">
+      <div className={styles.container}>
         <div className={styles.nuestrosServicios}>
           <h1>
             Nuestros <span>servicios</span>
@@ -155,7 +155,7 @@ export default function ServiceComponent() {
             <Image src="bateria.jpg" alt="cambio de batería" />
           </div>
         </motion.div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }

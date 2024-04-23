@@ -41,7 +41,7 @@ const FormComponent = () => {
     };
 
     return (
-        <div className='m-auto my-10 px-4 max-w-[600px]'>
+        <div className='m-auto max-w-[600px]'>
             <div>
                 <form className="space-y-6" onSubmit={handleSubmit}>
                     <div className={styles.inputGroup}>
@@ -53,7 +53,7 @@ const FormComponent = () => {
                                     type="text"
                                     name="name"
                                     id="name"
-                                    className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="mb-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     placeholder="Nombre"
                                 />
                             </div>
@@ -63,7 +63,7 @@ const FormComponent = () => {
                                     onChange={handleChange}
                                     type="text"
                                     name="email"
-                                    className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                    className="mb-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                     id="email"
                                     placeholder="Email" />
                             </div>
@@ -74,7 +74,7 @@ const FormComponent = () => {
                                 onChange={handleChange}
                                 type="text"
                                 name="subject"
-                                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="mb-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 id="subject"
                                 placeholder="Asunto"
                             />
@@ -84,9 +84,11 @@ const FormComponent = () => {
                                 value={formData.message}
                                 onChange={handleChange}
                                 name="message"
-                                className="p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                className="mb-2 p-2 block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                 id="message"
-                                placeholder="Mensaje">
+                                placeholder="Mensaje"
+                                style={{ height: 120 }}
+                            >
                             </textarea>
                         </div>
                         <div>

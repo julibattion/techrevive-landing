@@ -1,8 +1,13 @@
 .nosotros{
-    display: flex;
-    justify-content: space-around;
     background-color: #edf0f365;
-    padding: 70px;
+    padding: 140px;
+}
+
+.nosotros .container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .nosotros .imgNosotros .imgLocal{
@@ -106,11 +111,24 @@
 }
 
 @media screen and (max-width: 600px){
+    .nosotros{
+        padding: 40px;
+    }
+    .nosotros .container{
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+    .nosotros .imgNosotros .imgLocal{
+        height: 100%;
+        width: 100%;
+        margin-bottom: 20px;
+    }
     .nosotros .quienesSomos p{
-        width: 400px;
+        width: auto;
     }
 }
-
+/* 
 @media screen and (max-width: 480px){
     .nosotros .quienesSomos h2{
         font-size: 20px;
@@ -146,4 +164,4 @@
         width: 250px;
         height: 350px;
     }
-}
+} */
