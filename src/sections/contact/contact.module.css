@@ -1,0 +1,146 @@
+
+/* CONTACTO */
+
+.contacto{
+    background-color: #edf0f365;
+    padding: 70px;
+}
+
+.container {
+    display: flex;
+}
+
+.iframeContainer,
+.formContainer {
+    flex-grow: 1;
+}
+
+.iframeContainer iframe {
+    border: 0;
+}
+
+.formContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.formContainer .inputs .inputGroup .message textarea{
+    min-height: 130px;
+    max-height: 160px;
+}
+
+.inputs {
+    text-align: center;
+    width: 100%;
+    max-width: 450px;
+}
+
+.contactanos h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0038ff;
+}
+
+.contactanos p {
+    margin-bottom: 20px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.inputRow {
+    display: flex;
+    gap: 10px;
+}
+
+.inputRow .name,
+.inputRow .email {
+    flex-grow: 1;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+    width: 100%;
+}
+
+.button button {
+    background-color: #0038ff;
+    color: white; 
+    padding: 4px 10px; 
+    border: none; 
+    border-radius: 1px;
+    cursor: pointer;
+    margin-top: 10px; 
+    display: block; 
+    margin-left: auto; 
+    margin-right: auto; 
+    width: 80px; 
+    font-weight: 500;
+    position: sticky;
+    z-index: 999;
+}
+
+.button button:hover {
+    background-color: #111c75;
+    color: white;
+}
+
+
+/* CONTACTO */
+
+@media screen and (max-width:1200px){
+    .iframeContainer iframe {
+        width: 500px;
+        margin-right: 40px;
+    }
+}
+
+@media screen and (max-width:992px){
+    .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .iframeContainer{
+        margin-bottom: 50px;
+        margin-right: -40px;
+    }
+}
+
+@media screen and (max-width: 600px){
+    .iframeContainer iframe {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 500px){
+    .iframeContainer iframe {
+        width: 350px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .iframeContainer iframe {
+        width: 300px;
+    }
+}
+
+@media screen and (max-width: 400px){
+    .iframeContainer iframe {
+        width: 270px;
+    }
+    .contactanos p {
+        width: 200px;
+    }
+}
+
+@media screen and (max-width: 350px){
+    .iframeContainer iframe {
+        width: 230px;
+    }
+}

@@ -1,8 +1,7 @@
 import React from "react";
-import styles from './data.module.css';
 import { Card, CardBody, CardHeader, Divider, Image } from "@nextui-org/react";
 
-export default function ContactComponent() {
+export default function DataComponent() {
     return (
         <section className='px-40 py-20 max-[600px]:px-5 max-[600px]:py-10'>
             <div className='flex justify-between gap-20 max-[600px]:flex-wrap max-[600px]:gap-10'>

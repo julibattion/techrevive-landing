@@ -45,7 +45,7 @@ export default function ServiceComponent() {
 
   return (
     <div>
-      <section className="servicios" id="servicios">
+      <section className={styles.servicios} id="servicios">
         <div className={styles.nuestrosServicios}>
           <h1>
             Nuestros <span>servicios</span>

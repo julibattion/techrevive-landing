@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import axios from 'axios';
-import { Card, CardBody, CardHeader, Divider, Image } from '@nextui-org/react';
+import styles from './contact.module.css';
 
 interface FormModel {
     name: string;
@@ -44,9 +44,9 @@ const FormComponent = () => {
         <div className='m-auto my-10 px-4 max-w-[600px]'>
             <div>
                 <form className="space-y-6" onSubmit={handleSubmit}>
-                    <div className="input-group">
-                        <div className="input-row">
-                            <div className="name">
+                    <div className={styles.inputGroup}>
+                        <div className={styles.inputRow}>
+                            <div className={styles.name}>
                                 <input
                                     value={formData.name}
                                     onChange={handleChange}
@@ -57,7 +57,7 @@ const FormComponent = () => {
                                     placeholder="Nombre"
                                 />
                             </div>
-                            <div className="email">
+                            <div className={styles.email}>
                                 <input
                                     value={formData.email}
                                     onChange={handleChange}
