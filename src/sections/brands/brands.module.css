@@ -1,0 +1,51 @@
+
+.marcas{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.marcas .titulo{
+    margin-bottom: 50px;
+}
+
+.marcas .titulo h2{
+    font-size: 24px;
+    text-align: center;
+}
+
+.marcas .titulo h2 span{
+    color: #0038ff;
+    font-weight: 600;
+}
+
+.marcas .wrapper .carousel .card .dell{
+    width: 110px;
+    height: 110px;
+}
+
+.marcas .wrapper .carousel .card .hp{
+    width: 105px;
+    height: 105px;
+}
+
+.marcas .wrapper .carousel .card .asus{
+    width: 160px;
+    height: 160px;
+}
+
+.marcas .wrapper .carousel .card .lenovo{
+    width: 270px;
+    height: 270px;
+}
+
+.marcas .wrapper .carousel .card .bangho{
+    width: 250px;
+    height: 280px;
+}
+
+.marcas .wrapper .carousel .card .acer{
+    width: 200px;
+    height: 200px;
+}

@@ -23,7 +23,7 @@ export default function NavbarComponent() {
 
 
     return (
-        <Navbar onMenuOpenChange={setIsMenuOpen} className="bg-secondary opacity-90 mt-[-4rem]">
+        <Navbar maxWidth="full" onMenuOpenChange={setIsMenuOpen} className="bg-secondary opacity-90 mt-[-4rem] px-5 max-[600px]:px-0">
             <NavbarContent>
                 <NavbarMenuToggle
                     aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -61,7 +61,8 @@ export default function NavbarComponent() {
                     </p>
                 </NavbarItem>
             </NavbarContent>
-            <NavbarMenu className="bg-secondary">
+
+            <NavbarMenu className="bg-secondary opacity-90">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
                         <Link
