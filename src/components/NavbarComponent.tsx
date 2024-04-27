@@ -7,16 +7,17 @@ export default function NavbarComponent() {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
     const menuItems = [
-        "Incio",
-        "Servicios",
-        "Nosotros",
-        "Contactos"
+        { name: "Incio", id: "inicio" },
+        { name: "Servicios", id: "servicios" },
+        { name: "Nosotros", id: "nosotros" },
+        { name: "Contacto", id: "contacto" },
     ];
 
     const scrollToSection = (id: string) => {
         const section = document.getElementById(id);
         if (section) {
             section.scrollIntoView({ behavior: 'smooth' });
+            setIsMenuOpen(false)
         }
     };
 
@@ -59,13 +60,9 @@ export default function NavbarComponent() {
             <NavbarMenu className="bg-secondary opacity-90">
                 {menuItems.map((item, index) => (
                     <NavbarMenuItem key={`${item}-${index}`}>
-                        <Link
-                            className="w-full text-white"
-                            href="#"
-                            size="lg"
-                        >
-                            {item}
-                        </Link>
+                        <div className="w-full text-white" onClick={() => scrollToSection(item.id)}>
+                            {item.name}
+                        </div>
                     </NavbarMenuItem>
                 ))}
             </NavbarMenu>
