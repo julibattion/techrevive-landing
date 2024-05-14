@@ -147,9 +147,6 @@
 }
 
 @media screen and (max-width: 840px){
-    .servicios{
-        margin-top: -35px;
-    }
     .arreglos1{
         flex-direction: column;
         align-items: center;
@@ -172,6 +169,10 @@
     .arreglos2 div p{
         width: 400px;
     }
+
+    .diagnosticos img{
+        margin-top: -45px;
+    }
 }
 
 @media screen and (max-width: 600px){
@@ -182,10 +183,10 @@
 
 @media screen and (max-width: 480px){
     .servicios{
-        margin-top: -60px;
+        margin-top: -120px;
     }
-    .servicios .nuestrosServicios h1{
-        margin-bottom: -20px;
+    .servicios .nuestrosServicios{
+        margin-bottom: -90px;
     }
     .nuestrosServicios h1{
         font-size: 21px;

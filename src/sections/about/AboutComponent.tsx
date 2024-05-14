@@ -7,7 +7,7 @@ export default function AboutComponent() {
         <section className={styles.nosotros} id="nosotros">
             <div className={styles.container}>
                 <div className={styles.imgNosotros}>
-                    <Image src="local.jpg" className={styles.imgLocal} alt="imagen del frente del local" />
+                    <Image src="local.jpeg" className={styles.imgLocal} alt="imagen del frente del local" />
                 </div>
                 <div className={styles.quienesSomos}>
                     <h2>Quiénes <span>somos</span></h2>

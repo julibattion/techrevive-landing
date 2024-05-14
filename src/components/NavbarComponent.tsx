@@ -52,7 +52,7 @@ export default function NavbarComponent() {
                 </NavbarItem>
                 <NavbarItem>
                     <p className="text-white cursor-pointer" onClick={() => scrollToSection('contacto')}>
-                        Contactos
+                        Contacto
                     </p>
                 </NavbarItem>
             </NavbarContent>

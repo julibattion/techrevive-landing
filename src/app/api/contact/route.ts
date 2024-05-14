@@ -15,8 +15,8 @@ export async function POST(request: any, response: any) {
 
     try {
         await transporter.sendMail({
-            from: 'cresporodrigomanuel@gmail.com',
-            to: 'cresporodrigomanuel@gmail.com',
+            from: process.env.NEXT_PUBLIC_USER, 
+            to: process.env.NEXT_PUBLIC_USER,
             subject: `Mensaje de ${name} - ${subject}`,
             text: '',
             html: `<div><b>Correo Electrónico:</b> <p>${email}</p><b>Nombre:</b> <p>${name}</p></div><div><b>Mensaje:</b> <p>${message}</p></div>`
@@ -28,4 +28,3 @@ export async function POST(request: any, response: any) {
         return NextResponse.json('Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
     }
 }
-
