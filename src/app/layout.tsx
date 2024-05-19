@@ -14,6 +14,7 @@ export const metadata: Metadata = {
     title: 'TechRevive',
     type: 'website',
     description: 'Servicio tecnico especializado en reparacion de Notebooks, computadoras de escritorio y consolas',
+    images:'/public/portada-2.jpg'
   },
 };
 

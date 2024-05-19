@@ -1,4 +1,5 @@
-User-Agent: *
+User-agent: Googlebot
+Disallow: /nogooglebot/
+User-agent: *
 Allow: /
-Disallow: /private/
 Sitemap: https://techreviveservice.com/sitemap.xml
