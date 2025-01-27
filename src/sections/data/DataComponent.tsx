@@ -36,7 +36,7 @@ export default function DataComponent() {
                         </CardHeader>
                         <Divider />
                         <CardBody>
-                            <p>Lunes a viernes de <b>9 a 18hs.</b> <br /> Sábados de <b>9:30 a 13hs.</b></p>
+                            <p>Lunes a viernes de <b>9:45 a 18:30hs.</b> <br /> Sábados de <b>10 a 13hs.</b></p>
                         </CardBody>
                     </Card>
 

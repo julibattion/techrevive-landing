@@ -10,14 +10,14 @@ export default function FooterComponent() {
                     <Image src="techrevive.png" alt="logo empresa" className={styles.techrevive} radius='none' />
                 </div>
                 <div className={styles.info}>
-                    <p>Paraguay 2215
+                    <p>Italia 273
                     </p>
                     <p>Tel. 3415024695</p>
                     <p>techrevive.informatica@gmail.com</p>
                 </div>
                 <div className={styles.info}>
-                    <a className={styles.redes} href="https://www.instagram.com/techrevive.service/" target="_blank">
-                        <p>@techrevive.service</p>
+                    <a className={styles.redes} href="https://www.instagram.com/servitech.reparaciones/" target="_blank">
+                        <p>@servitech.reparaciones</p>
                         <Image width={50} height={50} src="instagram.png" alt="logo instagram" />
                     </a>
                 </div>
