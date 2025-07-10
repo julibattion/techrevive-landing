@@ -36,7 +36,7 @@ export default function DataComponent() {
                         </CardHeader>
                         <Divider />
                         <CardBody>
-                            <p>Lunes a viernes de <b>9:45 a 18:30hs.</b> <br /> Sábados de <b>10 a 13hs.</b></p>
+                            <p>Lunes a viernes de <b>9:30 a 18:30hs.</b> <br /> Sábados <b>solo con cita previa.</b></p>
                         </CardBody>
                     </Card>
 
@@ -54,7 +54,7 @@ export default function DataComponent() {
                         </CardHeader>
                         <Divider />
                         <CardBody>
-                            <p>Tel. 3415024695</p>
+                        <a href="https://api.whatsapp.com/send/?phone=3415024695" target="_blank"><p>Tel. 3415024695</p></a>
                         </CardBody>
                     </Card>
 

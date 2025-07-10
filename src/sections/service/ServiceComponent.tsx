@@ -1,5 +1,6 @@
+import React from "react";
 import styles from './service.module.css';
-import { Image } from '@nextui-org/react'
+import { Image } from '@nextui-org/react';
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useEffect } from "react";
@@ -40,7 +41,6 @@ export default function ServiceComponent() {
     if (inView5) {
       controls5.start({ opacity: 1, scale: 1 });
     }
-    // Agrega más condiciones y controles según sea necesario para cada sección
   }, [controls, controls1, controls2, controls3, controls4, controls5, inView, inView1, inView2, inView3, inView4, inView5]);
 
   return (

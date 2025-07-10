@@ -30,7 +30,7 @@ export default function NavbarComponent() {
                     className="sm:hidden text-white"
                 />
                 <NavbarBrand>
-                    <Image src="logo.png" alt="logo" width={40} height={40} radius="none" />
+                    <Image src="logo.png" alt="logo" width={35} height={30} radius="none" />
                 </NavbarBrand>
             </NavbarContent>
 
