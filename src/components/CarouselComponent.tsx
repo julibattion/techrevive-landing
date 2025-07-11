@@ -1,50 +1,156 @@
-import React from "react";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import { Image } from '@nextui-org/react'
+'use client';
 
-export default function SimpleSlider() {
-    const settings = {
-        dots: false,
-        slidesToShow: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        pauseOnHover: false,
-        cssEase: "linear",
-        infinite: true,
-        arrows: false,
-        centerMode: true,
-        className: "slider variable-width",
-        slidesToScroll: 1,
-        variableWidth: true,
-        responsive: [
-            {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1,
-                    centerMode: true,
-                },
-            },
-            {
-                breakpoint: 768,
-                settings: {
-                    slidesToShow: 3,
-                    centerMode: false,
-                },
-            },
-        ],
+import React, { useRef, useEffect, useState } from 'react';
+import Image from 'next/image';
+
+const brands = [
+    { src: '/acer.png', alt: 'Acer' },
+    { src: '/dell.png', alt: 'Dell' },
+    { src: '/hp.png', alt: 'HP' },
+    { src: '/lenovo.png', alt: 'Lenovo' },
+    { src: '/asus.png', alt: 'Asus' },
+    { src: '/bangho.png', alt: 'Bangho' },
+];
+
+export default function CarouselComponent() {
+    const carouselRef = useRef<HTMLDivElement>(null);
+    const isDragging = useRef(false);
+    const startX = useRef(0);
+    const scrollLeft = useRef(0);
+    const [visibleCount, setVisibleCount] = useState(3);
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            const width = window.innerWidth;
+            if (width < 500) setVisibleCount(1);
+            else if (width < 768) setVisibleCount(2);
+            else setVisibleCount(3);
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+
+    useEffect(() => {
+        const container = carouselRef.current;
+        if (!container) return;
+
+        const scrollStep = () => {
+            if (isDragging.current || !container) return;
+
+            const blockWidth = container.clientWidth / visibleCount;
+            container.scrollBy({ left: blockWidth, behavior: 'smooth' });
+
+
+            if (container.scrollLeft >= container.scrollWidth / 2) {
+                container.scrollLeft = 0;
+            }
+        };
+
+        const interval = setInterval(scrollStep, 3000);
+        return () => clearInterval(interval);
+    }, [visibleCount]);
+
+
+    const handleMouseDown = (e: React.MouseEvent) => {
+        const container = carouselRef.current;
+        if (!container) return;
+        isDragging.current = true;
+        startX.current = e.pageX - container.offsetLeft;
+        scrollLeft.current = container.scrollLeft;
     };
 
-    const SlickSlider = Slider as any;
+    const handleMouseMove = (e: React.MouseEvent) => {
+        if (!isDragging.current || !carouselRef.current) return;
+        const x = e.pageX - carouselRef.current.offsetLeft;
+        const walk = x - startX.current;
+        carouselRef.current.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const stopDrag = () => {
+        isDragging.current = false;
+    };
+
+    const handleTouchStart = (e: React.TouchEvent) => {
+        const container = carouselRef.current;
+        if (!container) return;
+        isDragging.current = true;
+        startX.current = e.touches[0].pageX - container.offsetLeft;
+        scrollLeft.current = container.scrollLeft;
+    };
+
+    const handleTouchMove = (e: React.TouchEvent) => {
+        if (!isDragging.current || !carouselRef.current) return;
+        const x = e.touches[0].pageX - carouselRef.current.offsetLeft;
+        const walk = x - startX.current;
+        carouselRef.current.scrollLeft = scrollLeft.current - walk;
+    };
+
+    const stopTouch = () => {
+        isDragging.current = false;
+    };
+
+    const itemWidth = 100 / visibleCount;
+    const loopedBrands = [...brands, ...brands];
 
     return (
-        <SlickSlider {...settings}>
-            <div className="flex justify-center items-center">
-                <div className="h-[250px] w-[250px] flex justify-center items-center">
-                    <Image width={200} height={200} src="acer.png" alt="logo acer" />
+        <div
+            ref={carouselRef}
+            className="flex overflow-x-auto px-4 gap-4 scrollbar-hide"
+            style={{
+                width: '100%',
+                scrollSnapType: 'x mandatory',
+                scrollBehavior: 'smooth',
+                cursor: isDragging.current ? 'grabbing' : 'grab',
+            }}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={stopDrag}
+            onMouseLeave={stopDrag}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={stopTouch}
+        >
+            {loopedBrands.map((brand, i) => (
+                <div
+                    key={i}
+                    className="flex-shrink-0 flex justify-center items-center"
+                    style={{
+                        width: `${itemWidth}vw`,
+                        scrollSnapAlign: 'start',
+                    }}
+                >
+                    <div
+                        style={{
+                            width: '85%',
+                            maxWidth: '160px',
+                            height: 'auto',
+                            display: 'flex',
+                            justifyContent: 'center',
+                        }}
+                    >
+                        <Image
+                            src={brand.src}
+                            alt={brand.alt}
+                            width={0}
+                            height={0}
+                            sizes="100vw"
+                            style={{ width: '100%', height: 'auto', objectFit: 'contain' }}
+                            priority
+                        />
+                    </div>
                 </div>
-            </div>
-        </SlickSlider>
+            ))}
+        </div>
     );
 }
+
+
+
+
+
+
+
+

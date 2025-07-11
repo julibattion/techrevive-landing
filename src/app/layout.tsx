@@ -42,7 +42,7 @@ export default function RootLayout({
       <body className={raleway.className}>
         <Providers>{children}</Providers>
         <a
-          href="https://wa.me/3415024695?text=Hola!%20Quisiera%20hacer%20una%20consulta"
+          href="https://wa.me/3415024695?text=Hola!%20Quiero%20hacer%20una%20consulta"
           target="_blank"
           rel="noopener noreferrer"
           className="fixed bottom-6 right-6 z-50 p-2 hover:scale-105 transition-transform"
