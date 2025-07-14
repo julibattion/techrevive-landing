@@ -19,7 +19,6 @@ export default function CarouselComponent() {
     const scrollLeft = useRef(0);
     const [visibleCount, setVisibleCount] = useState(3);
 
-
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
@@ -32,7 +31,6 @@ export default function CarouselComponent() {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-
     useEffect(() => {
         const container = carouselRef.current;
         if (!container) return;
@@ -43,7 +41,6 @@ export default function CarouselComponent() {
             const blockWidth = container.clientWidth / visibleCount;
             container.scrollBy({ left: blockWidth, behavior: 'smooth' });
 
-
             if (container.scrollLeft >= container.scrollWidth / 2) {
                 container.scrollLeft = 0;
             }
@@ -52,7 +49,6 @@ export default function CarouselComponent() {
         const interval = setInterval(scrollStep, 3000);
         return () => clearInterval(interval);
     }, [visibleCount]);
-
 
     const handleMouseDown = (e: React.MouseEvent) => {
         const container = carouselRef.current;
@@ -92,13 +88,18 @@ export default function CarouselComponent() {
         isDragging.current = false;
     };
 
-    const itemWidth = 100 / visibleCount;
     const loopedBrands = [...brands, ...brands];
+
+    const getBasisClass = () => {
+        if (visibleCount === 1) return 'basis-full';
+        if (visibleCount === 2) return 'basis-1/2';
+        return 'basis-1/3';
+    };
 
     return (
         <div
             ref={carouselRef}
-            className="flex overflow-x-auto px-4 gap-4 scrollbar-hide"
+            className="flex overflow-x-auto gap-4 scrollbar-hide"
             style={{
                 width: '100%',
                 scrollSnapType: 'x mandatory',
@@ -116,11 +117,8 @@ export default function CarouselComponent() {
             {loopedBrands.map((brand, i) => (
                 <div
                     key={i}
-                    className="flex-shrink-0 flex justify-center items-center"
-                    style={{
-                        width: `${itemWidth}vw`,
-                        scrollSnapAlign: 'start',
-                    }}
+                    className={`flex-shrink-0 flex justify-center items-center ${getBasisClass()}`}
+                    style={{ scrollSnapAlign: 'start' }}
                 >
                     <div
                         style={{
@@ -146,6 +144,7 @@ export default function CarouselComponent() {
         </div>
     );
 }
+
 
 
 
